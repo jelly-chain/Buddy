@@ -1,0 +1,60 @@
+{"ts":"2026-04-26T21:00:47.282Z","event":"daemon_start","windowSec":3}
+{"ts":"2026-04-26T21:02:00.076Z","event":"daemon_start","windowSec":5}
+{"ts":"2026-04-26T21:02:09.955Z","provider":"whisper-cli","text":"And."}
+{"ts":"2026-04-26T21:02:19.926Z","provider":"whisper-cli","text":"[ Pause ]"}
+{"ts":"2026-04-26T21:02:30.001Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:02:40.098Z","provider":"whisper-cli","text":"[typing sounds]"}
+{"ts":"2026-04-26T21:02:50.097Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:03:00.275Z","provider":"whisper-cli","text":"and transcribe."}
+{"ts":"2026-04-26T21:03:10.404Z","provider":"whisper-cli","text":"It's running, but it transcribed wrong."}
+{"ts":"2026-04-26T21:03:20.150Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:03:30.082Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:03:40.276Z","provider":"whisper-cli","text":"(upbeat music)"}
+{"ts":"2026-04-26T21:03:49.786Z","provider":"whisper-cli","text":"(upbeat music)"}
+{"ts":"2026-04-26T21:03:59.405Z","provider":"whisper-cli","text":"- That's so good."}
+{"ts":"2026-04-26T21:04:09.157Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:04:19.097Z","provider":"whisper-cli","text":"(laughing) (speaking in foreign language)"}
+{"ts":"2026-04-26T21:04:28.579Z","provider":"whisper-cli","text":"Good."}
+{"ts":"2026-04-26T21:04:38.307Z","provider":"whisper-cli","text":"[INAUDIBLE]"}
+{"ts":"2026-04-26T21:04:48.031Z","provider":"whisper-cli","text":"(mumbles)"}
+{"ts":"2026-04-26T21:04:57.901Z","provider":"whisper-cli","text":"[inaudible]"}
+{"ts":"2026-04-26T21:05:07.508Z","provider":"whisper-cli","text":"[inaudible]"}
+{"ts":"2026-04-26T21:05:17.811Z","provider":"whisper-cli","text":"Smash the block."}
+{"ts":"2026-04-26T21:05:28.316Z","provider":"whisper-cli","text":"Okay. Let's keep it together."}
+{"ts":"2026-04-26T21:05:38.224Z","provider":"whisper-cli","text":"(snoring)"}
+{"ts":"2026-04-26T21:05:47.958Z","provider":"whisper-cli","text":"(speaking in foreign language)"}
+{"ts":"2026-04-26T21:05:58.095Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:06:08.758Z","provider":"whisper-cli","text":"[inaudible]"}
+{"ts":"2026-04-26T21:06:18.442Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:06:29.049Z","provider":"whisper-cli","text":"(speaking in foreign language)"}
+{"ts":"2026-04-26T21:06:38.918Z","provider":"whisper-cli","text":"Okay."}
+{"ts":"2026-04-26T21:06:48.627Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:06:58.115Z","provider":"whisper-cli","text":"Well."}
+{"ts":"2026-04-26T21:07:08.222Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:07:18.275Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:07:28.297Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:07:38.214Z","provider":"whisper-cli","text":"[ Silence ]"}
+{"ts":"2026-04-26T21:07:48.235Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:07:58.827Z","provider":"whisper-cli","text":"Got some as long as the line test is."}
+{"ts":"2026-04-26T21:08:09.099Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:08:18.964Z","provider":"whisper-cli","text":"Crazy. So many. I guess bad."}
+{"ts":"2026-04-26T21:08:28.969Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:08:38.792Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:08:48.779Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:08:58.877Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:09:08.872Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:09:18.555Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:09:28.865Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:09:39.128Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:09:49.459Z","provider":"whisper-cli","text":"[ Silence ]"}
+{"ts":"2026-04-26T21:09:59.473Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:10:09.727Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:10:19.937Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:10:29.841Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:10:39.935Z","provider":"whisper-cli","text":"(air whooshing)"}
+{"ts":"2026-04-26T21:10:50.086Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:11:02.497Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:11:14.927Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:11:27.022Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:11:39.369Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}
+{"ts":"2026-04-26T21:11:51.738Z","provider":"whisper-cli","text":"[BLANK_AUDIO]"}

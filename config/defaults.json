@@ -1,0 +1,8 @@
+{
+  "proxyHealthPath": "/health",
+  "healthCheckIntervalMs": 60000,
+  "defaultChain": "solana",
+  "primaryChains": ["solana", "bnb"],
+  "secondaryChains": ["evm"],
+  "macos": true
+}

@@ -1,0 +1,12 @@
+# Architecture (Buddy v2 skeleton)
+- Core runtime: core/
+- Module system: modules/ with per-module CLAUDE.md, run.mjs, tools/
+- Proxy/startup: proxy.mjs, start-buddy.sh, start-claude.sh
+- Claude bootstrap: in-folder integration
+- VS Code: .vscode/
+- MCP: mcp-servers/
+- Docs: docs/
+- Logs: logs/
+- Config bootstrap: config-bootstrap.mjs
+- Init: core/init-core.mjs
+- Benchmarks: not yet

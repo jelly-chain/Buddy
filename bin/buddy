@@ -1,0 +1,148 @@
+#!/usr/bin/env node
+// Buddy unified CLI — short commands for mode, voice, and module tools.
+//
+// Usage:
+//   buddy mode                         # show current mode
+//   buddy mode edit|plan|user          # switch mode
+//   buddy voice                        # show voice state
+//   buddy voice auto on|off|status     # toggle auto-speak
+//   buddy voice live on|off|status     # toggle live transcript
+//   buddy voice say <text...>          # speak text
+//   buddy voice set <voice>            # choose TTS voice
+//   buddy voice list                   # list voices
+//   buddy voice listen [--live]        # mic → transcript
+//   buddy status                       # agent-health status (short)
+//   buddy chains                       # list supported chains
+//   buddy <module> <tool> [--arg v]    # run any module tool directly
+//   buddy modules                      # list all 75 modules
+//   buddy help                         # this help
+
+import { spawnSync } from 'node:child_process';
+import { readdirSync, statSync, existsSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, '..');
+const MODULES_DIR = join(ROOT, 'modules');
+
+function runTool(module, slashOrTool, ...rest) {
+  const runPath = join(MODULES_DIR, module, 'run.mjs');
+  if (!existsSync(runPath)) {
+    console.log(JSON.stringify({ ok: false, error: `module not found: ${module}` }));
+    process.exit(1);
+  }
+  const args = [runPath, slashOrTool, ...rest];
+  const r = spawnSync('node', args, { stdio: 'inherit', cwd: ROOT });
+  process.exit(r.status ?? 0);
+}
+
+function listModules() {
+  const mods = readdirSync(MODULES_DIR)
+    .filter((d) => {
+      try { return statSync(join(MODULES_DIR, d)).isDirectory(); } catch { return false; }
+    })
+    .sort();
+  console.log(JSON.stringify({ ok: true, count: mods.length, modules: mods }, null, 2));
+  process.exit(0);
+}
+
+function printHelp() {
+  console.log(`buddy — unified CLI
+Usage:
+  buddy mode                         show current mode
+  buddy mode edit|plan|user          switch mode
+  buddy voice                        show voice state (current, auto, live)
+  buddy voice auto on|off|status
+  buddy voice live on|off|status
+  buddy voice say <text...>
+  buddy voice set <voice>
+  buddy voice list
+  buddy voice listen [--live]
+  buddy status                       agent-health status
+  buddy modules                      list all modules
+  buddy chains                       list supported chains
+  buddy <module> <tool> [--k v ...]  run any module tool
+
+Examples:
+  buddy mode edit
+  buddy voice auto on
+  buddy voice say "build complete"
+  buddy voice listen --live
+  buddy blockchain block_number --chain solana
+  buddy evm chain_id --chain bnb
+  buddy search web --query "solana news"
+  buddy sentiment fear_greed
+`);
+  process.exit(0);
+}
+
+const [, , cmd, ...rest] = process.argv;
+
+if (!cmd || cmd === 'help' || cmd === '-h' || cmd === '--help') {
+  printHelp();
+}
+
+// ─── mode ──────────────────────────────────────────────────────────────────
+if (cmd === 'mode') {
+  const sub = rest[0];
+  if (!sub || sub === 'current' || sub === 'status') {
+    runTool('agent-health', '/mode current');
+  } else if (['user', 'edit', 'plan'].includes(sub)) {
+    runTool('agent-health', `/mode ${sub}`);
+  } else {
+    console.log(JSON.stringify({ ok: false, error: `Unknown mode '${sub}'`, usage: 'buddy mode [current|user|edit|plan]' }));
+    process.exit(1);
+  }
+}
+
+// ─── voice ─────────────────────────────────────────────────────────────────
+if (cmd === 'voice') {
+  const sub = rest[0];
+  if (!sub || sub === 'status' || sub === 'current') runTool('agent-health', '/voice current');
+  if (sub === 'list') runTool('agent-health', '/voice list');
+  if (sub === 'set') {
+    const v = rest[1];
+    if (!v) { console.log(JSON.stringify({ ok: false, error: 'voice required', usage: 'buddy voice set <voice>' })); process.exit(1); }
+    runTool('agent-health', `/voice set ${v}`);
+  }
+  if (sub === 'say') {
+    const text = rest.slice(1).join(' ').trim();
+    if (!text) { console.log(JSON.stringify({ ok: false, error: 'text required', usage: 'buddy voice say <text>' })); process.exit(1); }
+    runTool('agent-health', `/voice say ${text}`);
+  }
+  if (sub === 'auto') {
+    const s = rest[1] || 'status';
+    if (!['on', 'off', 'status'].includes(s)) { console.log(JSON.stringify({ ok: false, error: `bad: ${s}` })); process.exit(1); }
+    runTool('agent-health', `/voice auto ${s}`);
+  }
+  if (sub === 'live') {
+    const s = rest[1] || 'status';
+    if (!['on', 'off', 'status'].includes(s)) { console.log(JSON.stringify({ ok: false, error: `bad: ${s}` })); process.exit(1); }
+    runTool('agent-health', `/voice live ${s}`);
+  }
+  if (sub === 'listen') {
+    const live = rest.includes('--live') ? ' --live' : '';
+    runTool('agent-health', `/voice listen${live}`);
+  }
+  console.log(JSON.stringify({ ok: false, error: `Unknown voice subcommand '${sub}'`, usage: 'buddy voice [current|auto|live|say|set|list|listen]' }));
+  process.exit(1);
+}
+
+// ─── shortcuts ─────────────────────────────────────────────────────────────
+if (cmd === 'status') runTool('agent-health', 'status');
+if (cmd === 'modules') listModules();
+if (cmd === 'chains') runTool('blockchain', 'chains');
+
+// ─── generic dispatcher: buddy <module> <tool> ─────────────────────────────
+if (cmd && existsSync(join(MODULES_DIR, cmd))) {
+  const tool = rest[0];
+  if (!tool) {
+    console.log(JSON.stringify({ ok: false, error: `tool required`, usage: `buddy ${cmd} <tool> [--arg v]` }));
+    process.exit(1);
+  }
+  runTool(cmd, tool, ...rest.slice(1));
+}
+
+console.log(JSON.stringify({ ok: false, error: `Unknown command '${cmd}'. Run 'buddy help'.` }));
+process.exit(1);
