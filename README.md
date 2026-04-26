@@ -39,8 +39,8 @@ It is especially useful if you want:
 
 ### Chains
 
-- **Solana** — primary
 - **BNB Chain / opBNB** — primary
+- **Solana** — primary
 - **Ethereum** — secondary
 - **Base** — secondary
 - **Polygon** — secondary
