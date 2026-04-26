@@ -1,6 +1,6 @@
 # Buddy
 
-> Multi-chain AI builder and coding agent powered by Claude Code — macOS-first, VS Code-friendly, with Solana and BNB as primary chains.
+> Multi-chain AI builder and coding agent powered by Claude Code — macOS-first, VS Code-friendly, with BNB & Solana as primary chains.
 
 **GitHub:** [github.com/jelly-chain/buddy](https://github.com/jelly-chain/buddy)
 
