@@ -398,9 +398,9 @@ As Buddy evolves, this structure can expand into a larger modular `modules/` sys
 
 ## Contract addresses
 
-**BNB:** `0xf581ee357f11d7478fafd183b4a41347c35a4444`
+**BNB:** `SOON`
 
-**SOL:** `soon`
+**SOL:** `Soon`
 
 **ETH:** `SOON`
 
